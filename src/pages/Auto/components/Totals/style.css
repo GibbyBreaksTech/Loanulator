@@ -1,0 +1,52 @@
+.auto-total-container {
+    width: 35%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.auto-total-container .monthly-container h2 {
+    display: block;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.auto-total-container .monthly-container h3 {
+    display: block;
+    color: #03d356;
+    font-size: 24px;
+}
+
+.auto-total-container .monthly-container h3 span {
+    color: #dadada;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.auto-total-container h2 {
+    color: #a3a3a3;
+    font-size: 30px;
+}
+
+.auto-total-container h3 {
+    color: #03d356;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.auto-total-container h3 span {
+    color: #d4d4d4;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#month {
+    font-size: 16px;
+}
+
+#years {
+    font-size: 14px;
+    font-style: italic;
+}

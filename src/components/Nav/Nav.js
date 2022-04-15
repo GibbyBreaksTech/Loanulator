@@ -9,8 +9,13 @@ export const Nav = () => {
       <h1 id="logo">Loanulator</h1>
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/mortgage">Mortgage Calc</Link>
-        <Link to="/auto">Auto Calc</Link>
+        <div className="dropdown">
+          <button className='dropbtn'>Calculators</button>
+          <div className="dropdown-content">
+            <Link to="/mortgage">Mortgage Calc</Link>
+            <Link to="/auto">Auto Calc</Link>
+          </div>
+        </div>
       </div>
     </nav>
   )

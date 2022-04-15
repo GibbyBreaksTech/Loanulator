@@ -1,114 +1,14 @@
-.tab-wrapper {
+.auto-wrapper {
     display: flex;
+    flex-direction: column;
+    background: black;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.auto-wrapper h1 {
+    color: white;
+    margin: 20px auto;
 }
 
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-.label-wrapper {
-    margin: 20px;
-    width: 100%;
-}
-
-.label-wrapper label {
-    font-size: 24px;
-    width: 100%;
-}
-
-.label-wrapper .input-container {
+.calc-wrapper {
     display: flex;
-    background: #bbbbbb;
-    width: 300px;
-    border-radius: 6px;
-    padding: 6px 0;
-    align-items: center;
-}
-
-.label-wrapper .input-container:focus {
-    outline: 2px solid #000000;
-}
-
-.label-wrapper .label-helper {
-    margin: 0 10px;
-}
-
-.label-wrapper select {
-    background: #bbbbbb;
-    border: none;
-    font-size: 24px;
-    width: 100%;
-    margin: 10px;
-}
-
-.label-wrapper option {
-    margin-left: 10px;
-    font-size: 20px;
-}
-
-.label-wrapper input {
-    border: none;
-    background: #bbbbbb;
-    width: 100%;
-    outline: none;
-    margin: 10px;
-    font-size: 20px;
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    margin: 20px;
-}
-
-.checkbox-container input {
-    margin-right: 10px;
-}
-
-.tooltip {
-    margin-left: 10px;
-    display: flex;
-    text-align: center;
-    position: relative;
-}
-
-.tooltip h2 {
-    font-size: 24px;
-    font-weight: 700;
-    background: #bbbbbb;
-    padding: 1px 2px;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-}
-
-.tooltip:hover {
-    color: #000000;
-    background: white;
-}
-
-.tooltip:hover h2 {
-    color: #000000;
-    background: rgb(212, 212, 212);
-}
-
-.tooltip:hover p {
-    display: block;
-}
-
-.tooltip p {
-    display: none;
-    position: absolute;
-    width: 400px;
-    background: #bbbbbb;
-    border: 1px solid black;
-    left: 40px;
 }

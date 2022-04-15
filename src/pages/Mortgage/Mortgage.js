@@ -67,8 +67,9 @@ export const Mortgage = () => {
   }
 
   return (
-    <div className="tab-wrapper">
+    <div className="mortgage-wrapper">
       <div className="tab-container">
+        <h1>Mortgage Calculator</h1>
         <div className="label-wrapper">
           <label>Home Price
             <div className="input-container">

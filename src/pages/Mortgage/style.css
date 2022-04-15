@@ -1,4 +1,4 @@
-.tab-wrapper {
+.mortgage-wrapper {
     display: flex;
 }
 
@@ -12,17 +12,17 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.label-wrapper {
-    margin: 20px;
+.mortgage-wrapper .label-wrapper {
+    margin: 20px 0;
     width: 100%;
 }
 
-.label-wrapper label {
+.mortgage-wrapper .label-wrapper label {
     font-size: 24px;
     width: 100%;
 }
 
-.label-wrapper .input-container {
+.mortgage-wrapper .label-wrapper .input-container {
     display: flex;
     background: #bbbbbb;
     width: 300px;
@@ -31,15 +31,15 @@ input[type=number] {
     align-items: center;
 }
 
-.label-wrapper .input-container:focus {
+.mortgage-wrapper .label-wrapper .input-container:focus {
     outline: 2px solid #000000;
 }
 
-.label-wrapper .label-helper {
+.mortgage-wrapper .label-wrapper .label-helper {
     margin: 0 10px;
 }
 
-.label-wrapper select {
+.mortgage-wrapper .label-wrapper select {
     background: #bbbbbb;
     border: none;
     font-size: 24px;
@@ -47,12 +47,12 @@ input[type=number] {
     margin: 10px;
 }
 
-.label-wrapper option {
+.mortgage-wrapper .label-wrapper option {
     margin-left: 10px;
     font-size: 20px;
 }
 
-.label-wrapper input {
+.mortgage-wrapper .label-wrapper input {
     border: none;
     background: #bbbbbb;
     width: 100%;
@@ -61,25 +61,25 @@ input[type=number] {
     font-size: 20px;
 }
 
-.checkbox-container {
+.mortgage-wrapper .checkbox-container {
     display: flex;
     align-items: center;
     font-size: 20px;
     margin: 20px;
 }
 
-.checkbox-container input {
+.mortgage-wrapper .checkbox-container input {
     margin-right: 10px;
 }
 
-.tooltip {
+.mortgage-wrapper .tooltip {
     margin-left: 10px;
     display: flex;
     text-align: center;
     position: relative;
 }
 
-.tooltip h2 {
+.mortgage-wrapper .tooltip h2 {
     font-size: 24px;
     font-weight: 700;
     background: #bbbbbb;
@@ -90,21 +90,21 @@ input[type=number] {
     cursor: pointer;
 }
 
-.tooltip:hover {
+.mortgage-wrapper .tooltip:hover {
     color: #000000;
     background: white;
 }
 
-.tooltip:hover h2 {
+.mortgage-wrapper .tooltip:hover h2 {
     color: #000000;
     background: rgb(212, 212, 212);
 }
 
-.tooltip:hover p {
+.mortgage-wrapper .tooltip:hover p {
     display: block;
 }
 
-.tooltip p {
+.mortgage-wrapper .tooltip p {
     display: none;
     position: absolute;
     width: 400px;
