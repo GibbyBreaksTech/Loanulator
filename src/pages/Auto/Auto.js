@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // css
-import './style.css';
+import styled from 'styled-components';
 
 // components
 import { Form } from './components/Form/Form';
@@ -35,7 +35,7 @@ export const Auto = () => {
   }, [price, down, rate, loan, trade, payment])
 
   return (
-    <div className="auto-wrapper">
+    <StyledAuto>
       <h1>Auto Loan Calculator</h1>
       <div className="calc-wrapper">
         <Form
@@ -56,6 +56,19 @@ export const Auto = () => {
           interest={interest}
         />
       </div>
-    </div>
+    </StyledAuto>
   )
 }
+
+const StyledAuto = styled.section`
+display: flex;
+flex-direction: column;
+background: black;
+ h1 {
+    color: white;
+    margin: 20px auto;
+  }
+  .calc-wrapper {
+    display: flex;
+  }
+`

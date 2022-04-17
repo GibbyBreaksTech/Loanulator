@@ -1,5 +1,5 @@
 // css
-import './App.css';
+import GlobalStyles from "./GlobalStyles";
 
 // pages
 import { Home } from './pages/Home/Home.js';
@@ -17,6 +17,8 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <>
+      <GlobalStyles />
+      
       <Nav />
 
       <Routes>

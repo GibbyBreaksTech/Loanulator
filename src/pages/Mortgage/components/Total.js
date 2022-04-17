@@ -1,7 +1,5 @@
-
-
 // css
-import './style.css';
+import styled from "styled-components";
 
 export const Total = ({mortgage, insurance, pmi, hoa, tax}) => {
 

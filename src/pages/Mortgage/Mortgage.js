@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Total } from './components/Total';
 
 // css
-import './style.css';
+import styled from 'styled-components';
 
 export const Mortgage = () => {
 
@@ -67,7 +67,7 @@ export const Mortgage = () => {
   }
 
   return (
-    <div className="mortgage-wrapper">
+    <StyledMortgage>
       <div className="tab-container">
         <h1>Mortgage Calculator</h1>
         <div className="label-wrapper">
@@ -160,6 +160,97 @@ export const Mortgage = () => {
         down={down}
         price={price}
       />
-    </div>
+    </StyledMortgage>
   )
 }
+
+const StyledMortgage = styled.section`
+display: flex;
+.label-wrapper {
+    margin: 20px 0;
+    width: 100%;
+label {
+    font-size: 24px;
+    width: 100%;
+}
+.input-container {
+    display: flex;
+    background: #bbbbbb;
+    width: 300px;
+    border-radius: 6px;
+    padding: 6px 0;
+    align-items: center;
+}
+.input-container:focus {
+    outline: 2px solid #000000;
+}
+.label-helper {
+    margin: 0 10px;
+}
+select {
+    background: #bbbbbb;
+    border: none;
+    font-size: 24px;
+    width: 100%;
+    margin: 10px;
+}
+option {
+    margin-left: 10px;
+    font-size: 20px;
+}
+input {
+    border: none;
+    background: #bbbbbb;
+    width: 100%;
+    outline: none;
+    margin: 10px;
+    font-size: 20px;
+}
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 20px;
+input {
+    margin-right: 10px;
+}
+
+.tooltip {
+    margin-left: 10px;
+    display: flex;
+    text-align: center;
+    position: relative;
+ h2 {
+    font-size: 24px;
+    font-weight: 700;
+    background: #bbbbbb;
+    padding: 1px 2px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+}
+
+.tooltip:hover {
+    color: #000000;
+    background: white;
+}
+.tooltip:hover h2 {
+    color: #000000;
+    background: rgb(212, 212, 212);
+}
+.tooltip:hover p {
+    display: block;
+}
+.tooltip p {
+    display: none;
+    position: absolute;
+    width: 400px;
+    background: #bbbbbb;
+    border: 1px solid black;
+    left: 40px;
+}
+}
+`;
