@@ -8,6 +8,16 @@ nav {
 
 nav h1 {
     font-size: 30px;
+    color: white;
+}
+
+nav .logo-container {
+    display: flex;
+    align-items: baseline;
+}
+
+nav .logo-container img {
+    width: 35px;
 }
 
 nav .nav-links {
@@ -18,7 +28,7 @@ nav .nav-links {
 }
 
 nav .nav-links a {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: rgb(255, 255, 255);
 }
@@ -31,8 +41,8 @@ nav .nav-links a:hover {
 .dropbtn {
     background-color: #4CAF50;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
 }
@@ -42,24 +52,25 @@ nav .nav-links a:hover {
     display: inline-block;
 }
 
-.dropdown-content {
+.nav-links .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #808080;
+    background-color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
-.dropdown-content a {
+.nav-links .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-size: 16px;
 }
 
 .dropdown-content a:hover {
-    background-color: #d11818
+    background-color: #03d35673;
 }
 
 .dropdown:hover .dropdown-content {

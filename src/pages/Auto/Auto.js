@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 
 // css
 import styled from 'styled-components';
+import * as pallette from '../../styled/ThemeVariables.js';
 
 // components
-import { Form } from './components/Form/Form';
-import { Totals } from './components/Totals/Totals';
+import { Form } from './components/Form';
+import { Totals } from './components/Totals';
 
 export const Auto = () => {
 
@@ -65,8 +66,9 @@ display: flex;
 flex-direction: column;
 background: black;
  h1 {
+   font-size: ${pallette.title};
     color: white;
-    margin: 20px auto;
+    margin: 20px auto 50px auto;
   }
   .calc-wrapper {
     display: flex;

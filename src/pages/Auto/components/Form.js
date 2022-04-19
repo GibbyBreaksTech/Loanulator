@@ -2,16 +2,16 @@
 import styled from "styled-components";
 
 export const Form = ({
-    price, 
-    setPrice, 
-    loan, 
-    setLoan, 
-    rate, 
-    setRate, 
-    down, 
-    setDown, 
-    trade, 
-    setTrade
+  price, 
+  setPrice, 
+  loan, 
+  setLoan, 
+  rate, 
+  setRate, 
+  down, 
+  setDown, 
+  trade, 
+  setTrade
 }) => {
 
   return (
@@ -70,7 +70,7 @@ export const Form = ({
       </div>
       <div className="additions-container" id="additions">
         <div className="label-wrapper">
-          <label>Loan Length (Months)</label>
+          <label>Loan Length</label>
           <div className="input-container">
             <input
               type="text"
@@ -79,6 +79,7 @@ export const Form = ({
                 setLoan(e.target.value)
               }}
             />
+            <div className="label-helper">/months</div>
           </div>
         </div>
       </div>
@@ -87,51 +88,49 @@ export const Form = ({
 }
 
 const StyledForm = styled.form`
-    background: #6d6d6d56;
-    width: 400px;
-    max-width: 400px;
-    padding: 10px 0;
-    border-radius: 8px;
-.label-wrapper {
+background: #6d6d6d56;
+width: 400px;
+max-width: 400px;
+padding: 10px 0;
+border-radius: 8px;
+  .label-wrapper {
     margin: 20px auto;
     width: 80%;
     background: #03d3563b;
     border-radius: 8px;
     display: flex;
     align-items: center;
-
- label {
-    font-size: 20px;
-    color: rgb(231, 230, 230);
-    margin-left: 10px;
-    width: 50%;
-}
-
-.input-container {
-    display: flex;
-    background: none;
-    width: 50%;
-    border-radius: 6px;
-    align-items: center;
-    margin-left: 10px;
-    border: 1px solid #bbbbbb54;
-}
-
- .label-helper {
-    font-size: 16px;
-    margin-left: 6px;
-    color: #dbdbdb;
-}
-
-input {
-    border: none;
-    background: none;
-    outline: none;
-    margin: 10px 6px;
-    font-size: 20px;
-    width: 75%;
-    color: rgb(231, 230, 230);
-}
-}
-
+    label {
+      font-size: 20px;
+      color: rgb(231, 230, 230);
+      margin-left: 10px;
+      width: 50%;
+      span {
+        font-size: 16px;
+      }
+    }
+    .input-container {
+      display: flex;
+      background: none;
+      width: 50%;
+      border-radius: 6px;
+      align-items: center;
+      margin-left: 10px;
+      border: 1px solid #bbbbbb54;
+    }
+    .label-helper {
+      font-size: 16px;
+      margin-left: 6px;
+      color: #dbdbdb;
+    }
+    input {
+      border: none;
+      background: none;
+      outline: none;
+      margin: 10px 6px;
+      font-size: 20px;
+      width: 75%;
+      color: rgb(231, 230, 230);
+    }
+  }
 `;
