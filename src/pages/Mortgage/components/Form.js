@@ -2,25 +2,25 @@
 import styled from 'styled-components';
 
 export const Form = ({
-    price,
-    setPrice,
-    down, 
-    setDown, 
-    loan, 
-    setLoan, 
-    rate, 
-    setRate, 
-    tax, 
-    setTax, 
-    insurance, 
-    setInsurance, 
-    hoa, 
-    setHoa, 
-    pmi, 
-    mortgage, 
-    setMortgage,
-    setIncludePmi,
-    setIncludeTaxes
+  price,
+  setPrice,
+  down, 
+  setDown, 
+  loan, 
+  setLoan, 
+  rate, 
+  setRate, 
+  tax, 
+  setTax, 
+  insurance, 
+  setInsurance, 
+  hoa, 
+  setHoa, 
+  pmi, 
+  mortgage, 
+  setMortgage,
+  setIncludePmi,
+  setIncludeTaxes
 }) => {
 
   const handleDisplay = () => {
