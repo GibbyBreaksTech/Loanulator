@@ -2,61 +2,33 @@
 import styled from "styled-components";
 
 export const Form = ({
-  price, 
-  setPrice, 
-  loan, 
-  setLoan, 
+  principal, 
+  setPrincipal,
   rate, 
-  setRate, 
-  down, 
-  setDown, 
-  trade, 
-  setTrade
+  setRate,
+  compound,
+  setCompound,
+  time, 
+  setTime
 }) => {
 
   return (
     <StyledForm>
       <div className="label-wrapper">
-        <label>Price</label>
+        <label>Principal</label>
         <div className="input-container">
           <div className="label-helper">$</div>
           <input
             type="text"
-            defaultValue={price}
+            defaultValue={principal}
             onChange={(e) => {
-              setPrice(e.target.value)
+              setPrincipal(e.target.value)
             }}
           />
         </div>
       </div>
       <div className="label-wrapper">
-        <label>Down Payment</label>
-        <div className="input-container">
-          <div className="label-helper">$</div>
-          <input
-            type="text"
-            defaultValue={down}
-            onChange={(e) => {
-              setDown(e.target.value)
-            }}
-          />
-        </div>
-      </div>
-      <div className="label-wrapper">
-        <label>Trade-In Value</label>
-        <div className="input-container">
-          <div className="label-helper">$</div>
-          <input
-            type="text"
-            defaultValue={trade}
-            onChange={(e) => {
-              setTrade(e.target.value)
-            }}
-          />
-        </div>
-      </div>
-      <div className="label-wrapper">
-        <label>Interest Rate</label>
+        <label>Annual Rate</label>
         <div className="input-container">
           <input
             type="number"
@@ -68,18 +40,35 @@ export const Form = ({
           <span className="label-helper">%</span>
         </div>
       </div>
+      <div className="label-wrapper">
+        <label>Compound</label>
+        <div className="input-container">
+          <select
+          type="number"
+            defaultValue={compound}
+            onChange={(e) => {
+              setCompound(Number(e.target.value))
+            }}
+          >
+           <option value={1}>Annually</option>
+           <option value={2}>Semi-Annually</option>  
+           <option value={4}>Quarterly</option> 
+           <option value={6}>Bi-Monthly</option> 
+           <option value={12}>Monthly</option> 
+          </select>
+        </div>
+      </div>
       <div className="additions-container" id="additions">
         <div className="label-wrapper">
-          <label>Loan Length</label>
+          <label>Time <span>(years)</span></label>
           <div className="input-container">
             <input
               type="text"
-              defaultValue={loan}
+              defaultValue={time}
               onChange={(e) => {
-                setLoan(e.target.value)
+                setTime(e.target.value)
               }}
             />
-            <div className="label-helper">/months</div>
           </div>
         </div>
       </div>
@@ -89,7 +78,7 @@ export const Form = ({
 
 const StyledForm = styled.form`
 background: #6d6d6d56;
-width: 400px;
+width: 50%;
 max-width: 400px;
 padding: 10px 0;
 border-radius: 8px;
@@ -136,7 +125,7 @@ border-radius: 8px;
         margin-left: 6px;
         color: #dbdbdb;
       }
-      input {
+      input, select {
         border: none;
         background: none;
         outline: none;
@@ -144,6 +133,14 @@ border-radius: 8px;
         font-size: 20px;
         width: 75%;
         color: rgb(231, 230, 230);
+      }
+      select {
+        width: 100%;
+        cursor: pointer;
+      }
+      option { 
+        color: black;
+        cursor: pointer;
       }
     }
   }

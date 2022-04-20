@@ -140,6 +140,14 @@ width: 500px;
 max-width: 600px;
 padding: 10px 0;
 border-radius: 8px;
+  @media (max-width: 960px){
+    width: 80%;
+    margin: auto;
+  }
+  @media (max-width: 460px){
+    width: 95%;
+    margin: auto;
+  }
   .label-wrapper {
     margin: 20px auto;
     width: 80%;
@@ -147,6 +155,9 @@ border-radius: 8px;
     border-radius: 8px;
     display: flex;
     align-items: center;
+    @media (max-width: 660px){
+      width: 95%;
+    }
     label {
       font-size: 20px;
       color: rgb(231, 230, 230);
@@ -161,6 +172,9 @@ border-radius: 8px;
       align-items: center;
       margin-left: 10px;
       border: 1px solid #bbbbbb54;
+      &:hover {
+        border: 1px solid #bbbbbb;
+      }
     }
     .label-helper {
       font-size: 16px;
@@ -180,20 +194,23 @@ border-radius: 8px;
       color: rgb(231, 230, 230);
     }
     .percent {
-      width: 50px;
-      border-left: 2px solid #000000;
-      padding-left: 6px;
+      width: 40px;
+      text-align: right;
+      margin: 10px 4px;
     }
     select {
-    background: #bbbbbb;
-    border: none;
-    font-size: 18px;
-    width: 100%;
-    margin: 10px;
-    }
-    option {
-      margin-left: 10px;
-      font-size: 16px;
+      border: none;
+      font-size: 18px;
+      width: 100%;
+      margin: 10px;
+      background: none;
+      color: white;
+      option {
+        color: #000000;
+        margin-left: 10px;
+        font-size: 16px;
+        background: none;
+      }
     }
   }
     .checkbox-container {
@@ -202,6 +219,9 @@ border-radius: 8px;
       font-size: 20px;
       margin: 20px auto;
       width: 80%;
+      @media (max-width: 660px){
+        width: 95%;
+      }
       input {
         margin-right: 10px;
       }

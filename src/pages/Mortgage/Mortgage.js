@@ -90,13 +90,23 @@ console.log(pmi)
 const StyledMortgage = styled.section`
 display: flex;
 flex-direction: column;
-background: black;
    h1 {
     font-size: ${pallette.title};
     color: white;
     margin: 20px auto 50px auto;
+    @media (max-width: 1150px){
+      font-size: 35px;
+    }
+    @media (max-width: 960px){
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
   .calc-wrapper {
     display: flex;
+    @media (max-width: 960px){
+      flex-direction: column;
+    }
   }
 `;

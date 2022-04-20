@@ -26,15 +26,24 @@ width: 35%;
 margin: 0 auto;
 display: flex;
 flex-direction: column;
+  @media (max-width: 660px){
+    width: 80%;
+    text-align: center;
+  }
   h2 {
     color: #a3a3a3;
     font-size: 30px;
     border-bottom: 1px solid #a3a3a3;
+    @media (max-width: 1150px){
+      font-size: 24px;
+    }
+    @media (max-width: 660px){
+      margin-top: 30px;
+    }
   }
   h3 {
     color: #03d356;
-    display: flex;
-    flex-direction: column;
+    display: block;
     margin: 10px 0;
     font-size: 30px;
     span {
@@ -43,13 +52,13 @@ flex-direction: column;
       font-size: 20px;
     }
   }
-  .monthly-container {
+  .monthly-container, .interest-container, .total-paid-container {
     h2 {
       display: block;
       color: #ffffff;
       font-size: 30px;
     }
-    h3, h4 {
+    h3 {
       display: block;
       color: #03d356;
       font-size: 30px;
@@ -61,8 +70,9 @@ flex-direction: column;
       }
     }
     h4 {
+      color: #dadada;
       font-size: 20px;
-      margin-top: 0;
+      margin-top: 20px;
       span {
         font-size: 16px;
       }
@@ -74,35 +84,5 @@ flex-direction: column;
   #years {
     font-size: 14px;
     font-style: italic;
-  }
-  .interest-container {
-    h3 {
-      margin: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-    }
-    h4 {
-      color: #dadada;
-      font-size: 20px;
-      font-weight: 400;
-      margin-top: 20px;
-    }
-  }
-  .total-paid-container {
-    h3 {
-      margin: 0;
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-    }
-    h4 {
-      color: #dadada;
-      font-size: 20px;
-      font-weight: 400;
-      &:first-child {
-        margin-top: 20px;
-      }
-    }
   }
 `;

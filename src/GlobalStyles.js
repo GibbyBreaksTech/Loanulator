@@ -11,7 +11,7 @@ html {
     scroll-behavior: smooth;
     width: 80%;
     max-width: 1200px;
-    background: #000000;
+    background: #1e1d1de6;
     letter-spacing: .5px;
     font-family: 'Space Mono', monospace;
     @media (max-width: 1450px){
