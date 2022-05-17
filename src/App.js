@@ -6,6 +6,7 @@ import { Home } from './pages/Home/Home.js';
 import { Mortgage } from './pages/Mortgage/Mortgage';
 import { Auto } from './pages/Auto/Auto';
 import { Compound } from "./pages/Compound/Compound";
+import { Budget } from "./pages/Budget/Budget";
 
 // components
 import { Nav } from './components/Nav/Nav.js';
@@ -29,6 +30,8 @@ function App() {
         <Route path='/auto' element={<Auto />} />
 
         <Route path='/compound' element={<Compound />} />
+
+        <Route path='/budget' element={<Budget />} />
       </Routes>
 
       <Footer />
