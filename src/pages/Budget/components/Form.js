@@ -1,59 +1,9 @@
 // css
 import styled from 'styled-components';
 
-export const Form = ({
-  price,
-  setPrice,
-  down, 
-  setDown, 
-  loan, 
-  setLoan, 
-  rate, 
-  setRate, 
-  tax, 
-  setTax, 
-  insurance, 
-  setInsurance, 
-  hoa, 
-  setHoa, 
-  pmi, 
-  mortgage, 
-  setMortgage,
-  setIncludePmi,
-  setIncludeTaxes
-}) => {
+export const Form = () => {
 
-  const handleDisplay = () => {
-    let checkbox = document.getElementById("includeTaxes");
-    let additions = document.getElementById("additions")
-    if(checkbox.checked === true){
-      additions.style.display = "block"
-    } else {
-      additions.style.display = "none"
-    }
-  }
 
-  const handleAdds = () => {
-    let adds = tax / 12 + insurance / 12 + hoa;
-    let checkbox = document.getElementById("includeTaxes");
-    console.log(adds)
-    if(checkbox.checked === true){
-      setMortgage(Number(mortgage.toFixed(0)) + adds);
-      setIncludeTaxes(true);
-    } else {
-      setMortgage(Number(mortgage.toFixed(0)) - adds);
-      setIncludeTaxes(false);
-    }
-  }
-
-  const handlePMI = () => {
-    let checkbox = document.getElementById("pmi");
-    if(checkbox.checked === true){
-      setIncludePmi(true)
-    } else {
-      setIncludePmi(false)
-    }
-  }
 
   return (
     <StyledForm>
