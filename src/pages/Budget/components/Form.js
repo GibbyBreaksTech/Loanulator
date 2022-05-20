@@ -7,75 +7,333 @@ export const Form = () => {
 
   return (
     <StyledForm>
-      <div className="tab-container">
-        <div className="label-wrapper">
-          <label>Home Price</label>
-          <div className="input-container">
-            <div className="label-helper">$</div>
-            <input type="text" defaultValue={price} onChange={(e) => { setPrice(e.target.value)}}/>
+      <div className="tab-wrapper">
+        <div className="tab-container">
+          <h2>Monthly Income</h2>
+          <div className="label-wrapper">
+            <label>Salary / Earned Income</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Pension / Social Secruity</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Investments / Savings</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Other</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
           </div>
         </div>
-        <div className="label-wrapper">
-          <label>Down Payment</label>
-          <div className="input-container">
-            <div className="label-helper">$</div>
-            <input type="text" defaultValue={down} onChange={(e) => { setDown(e.target.value)}}/>
-            <input type="number" className='percent' defaultValue={down / price * 100} onChange={(e) => { setDown(price * (e.target.valueAsNumber / 100) )}}/>
-            <div className="label-helper">%</div>
+        <h2>Expenses</h2>
+        <div className="tab-container">
+          <h2>Housing / Utilities</h2>
+          <div className="label-wrapper">
+            <label>Mortgage / Rent</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
           </div>
-        </div>
-        <div className="label-wrapper">
-          <label>Loan Program</label>
-          <div className="input-container">
-            <select onChange={(e) => { setLoan(Number(e.target.value))}}>
-              <option value={30}>30 Year Fixed</option>
-              <option value={20}>20 Year Fixed</option>
-              <option value={15}>15 Year Fixed</option>
-            </select>
-          </div>
-        </div>
-        <div className="label-wrapper">
-          <label>Interest Rate</label>
-          <div className="input-container">
-            <input type="number" defaultValue={rate} onChange={(e) => { setRate(Number(e.target.valueAsNumber))}}/>
-            <div className="label-helper">%</div>
-          </div>
-        </div>
-        <div className="checkbox-container">
-          <input type="checkbox" id="pmi" onChange={(e) => { handlePMI()}}/>
-          <p>Include Mortgage Insurance</p>
-          <div className="tooltip">
-            <h2>?</h2>
-            <p>Mortgage insurance is required primarily for borrowers on a conventional loan with a down payment of less than <strong>20%</strong> of the home's purchase price. It protects lenders against some or most of the losses that can occur when a borrower defaults on a mortgage loan. Contact your lender for more details.</p>
-          </div>
-        </div>
-        <div className="checkbox-container">
-          <input type="checkbox" id="includeTaxes" defaultChecked onChange={() => { handleAdds(); handleDisplay(); }}/>
-          <p>Include taxes / insurance</p>
-        </div>
-        <div className="additions-container" id="additions">
           <div className="label-wrapper">
             <label>Property Tax</label>
             <div className="input-container">
               <div className="label-helper">$</div>
-              <input type="text" defaultValue={tax} key={tax} onChange={(e) => { setTax(e.target.valueAsNumber)}}/>
-              <input type="number" className='percent' defaultValue={tax / price * 100} onChange={(e) => { setTax(price * (e.target.valueAsNumber / 100) )}}/>
-              <div className="label-helper">%</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
             </div>
           </div>
           <div className="label-wrapper">
-            <label>Home Insurance</label>
+            <label>Insurance</label>
             <div className="input-container">
               <div className="label-helper">$</div>
-              <input type="number" defaultValue={insurance} onChange={(e) => setInsurance(e.target.valueAsNumber)}/>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
             </div>
           </div>
           <div className="label-wrapper">
-            <label>HOA Dues</label>
+            <label>HOA Fee</label>
             <div className="input-container">
               <div className="label-helper">$</div>
-              <input type="number" defaultValue={hoa} onChange={(e) => setHoa(e.target.valueAsNumber)} />
-              <div className="label-helper">/month</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Home Repair</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Utilities</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+        </div>
+        <div className="tab-container">
+          <h2>Transportation</h2>
+          <div className="label-wrapper">
+            <label>Aut Loan / Lease</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Auto Insurance</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Gasoline</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Maintence</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Parking / Tolls</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Other</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+        </div>
+        <div className="tab-container">
+          <h2>Other Debts / Loans</h2>
+          <div className="label-wrapper">
+            <label>Credit Cards</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Student Loans</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Other</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+        </div>
+        <div className="tab-container">
+          <h2>Living Expenses</h2>
+          <div className="label-wrapper">
+            <label>Groceries</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Clothing</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Household Items</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Dining Out</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Other</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+        </div>
+        <div className="tab-container">
+          <h2>Healthcare</h2>
+          <div className="label-wrapper">
+            <label>Medical Insurance</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Medical Bills</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Dental Insurance</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+        </div>
+        <div className="tab-container">
+          <h2>Children / Education</h2>
+          <div className="label-wrapper">
+            <label>Childcare</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Tuition</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Education Supplies</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Child Support</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Other</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+        </div>
+        <div className="tab-container">
+          <h2>Savings / Investments</h2>
+          <div className="label-wrapper">
+            <label>401k / IRA</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>College Savings</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Investments</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Emergency Fund</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Other</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+        </div>
+        <div className="tab-container">
+          <h2>Miscellaneous Expenses</h2>
+          <div className="label-wrapper">
+            <label>Pet</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Pet Insurance</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Hobbies / Sports</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Entertainment</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Travel</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
+            </div>
+          </div>
+          <div className="label-wrapper">
+            <label>Other</label>
+            <div className="input-container">
+              <div className="label-helper">$</div>
+              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
             </div>
           </div>
         </div>
