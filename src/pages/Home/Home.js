@@ -10,6 +10,7 @@ export const Home = () => {
     <StyledHome>
       <div className="links">
         <h4>Financial Calculators</h4>
+        <Link to="/budget">Simple Budget Calculator</Link>
         <Link to="/mortgage">Mortgage Calculator</Link>
         <Link to="/auto">Auto Loan Calculator</Link>
         <Link to="/compound">Compound Interest Calculator</Link>

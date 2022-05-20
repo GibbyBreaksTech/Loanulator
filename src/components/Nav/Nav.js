@@ -33,7 +33,7 @@ export const Nav = () => {
             <Link to="/mortgage">Mortgage</Link>
             <Link to="/auto">Auto Loan</Link>
             <Link to="/compound">Compound Interest</Link>
-            <Link to="/budget">Budget</Link>
+            <Link to="/budget">Simple Budget</Link>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ export const Nav = () => {
           <Link to="/mortgage">Mortgage</Link>
           <Link to="/auto">Auto Loan</Link>
           <Link to="/compound">Compound Interest</Link>
-          <Link to="/budget">Budget</Link>
+          <Link to="/budget">Simple Budget</Link>
         </div>
       </div>
       <img id='hamburger' src={Hamburger} onClick={openNav} alt="hamburger menu"/>
