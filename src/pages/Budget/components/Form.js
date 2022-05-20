@@ -1,342 +1,89 @@
+import { useState, useEffect } from 'react';
 // css
 import styled from 'styled-components';
 
-export const Form = () => {
+export const Form = ({setTotal}) => {
 
+  const [ income, setIncome ] = useState(0);
 
+  useEffect(() => {
+    const loadValues = () => {
+      let x = document.getElementsByClassName("inputs");
+      let sum = 0;
+      for ( let i = 0; i < x.length; i++){
+        sum += parseInt(x[i].value);
+      }
+      setTotal(income - sum);
+    }
+    loadValues();
+  }, [income, setTotal])
+
+  const handleValues = () => {
+    let x = document.getElementsByClassName("inputs");
+    let sum = 0;
+    for ( let i = 0; i < x.length; i++){
+      sum += Number(x[i].value);
+      console.log(x[i].value)
+    }
+    setTotal(income - sum);
+  }
+
+  const addFields = () => {
+    let div = document.getElementById("tab-wrapper")
+    let x = document.createElement("div");
+    x.classList.add("label-wrapper");
+    x.innerHTML = `
+      <label><input type="text" /></label>
+      <div class="input-container">
+        <div class="label-helper">$</div>
+        <input class="inputs" type="text" value="0" />
+      </div>
+    `
+    div.appendChild(x);
+  }
 
   return (
     <StyledForm>
-      <div className="tab-wrapper">
-        <div className="tab-container">
-          <h2>Monthly Income</h2>
-          <div className="label-wrapper">
-            <label>Salary / Earned Income</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Pension / Social Secruity</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Investments / Savings</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Other</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
+      <div className="tab-wrapper" id="tab-wrapper">
+        <div className="label-wrapper">
+          <label>Monthly Income</label>
+          <div className="input-container">
+            <div className="label-helper">$</div>
+            <input type="text" defaultValue={income} onChange={(e) => { setIncome(e.target.value)}}/>
           </div>
         </div>
-        <h2>Expenses</h2>
-        <div className="tab-container">
-          <h2>Housing / Utilities</h2>
-          <div className="label-wrapper">
-            <label>Mortgage / Rent</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Property Tax</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Insurance</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>HOA Fee</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Home Repair</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Utilities</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
+        <div className="label-wrapper">
+          <label><input type="text" /></label>
+          <div className="input-container">
+            <div className="label-helper">$</div>
+            <input className="inputs" type="text" defaultValue={0} />
           </div>
         </div>
-        <div className="tab-container">
-          <h2>Transportation</h2>
-          <div className="label-wrapper">
-            <label>Aut Loan / Lease</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Auto Insurance</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Gasoline</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Maintence</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Parking / Tolls</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Other</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
+        <div className="label-wrapper">
+          <label><input type="text" /></label>
+          <div className="input-container">
+            <div className="label-helper">$</div>
+            <input type="text" className="inputs" defaultValue={0} />
           </div>
         </div>
-        <div className="tab-container">
-          <h2>Other Debts / Loans</h2>
-          <div className="label-wrapper">
-            <label>Credit Cards</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Student Loans</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Other</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
+        <div className="label-wrapper">
+          <label><input type="text" /></label>
+          <div className="input-container">
+            <div className="label-helper">$</div>
+            <input type="text" className="inputs" defaultValue={0} />
           </div>
         </div>
-        <div className="tab-container">
-          <h2>Living Expenses</h2>
-          <div className="label-wrapper">
-            <label>Groceries</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Clothing</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Household Items</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Dining Out</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Other</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
+        <div className="label-wrapper">
+          <label><input type="text" /></label>
+          <div className="input-container">
+            <div className="label-helper">$</div>
+            <input type="text" className="inputs" defaultValue={0} />
           </div>
         </div>
-        <div className="tab-container">
-          <h2>Healthcare</h2>
-          <div className="label-wrapper">
-            <label>Medical Insurance</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Medical Bills</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Dental Insurance</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-        </div>
-        <div className="tab-container">
-          <h2>Children / Education</h2>
-          <div className="label-wrapper">
-            <label>Childcare</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Tuition</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Education Supplies</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Child Support</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Other</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-        </div>
-        <div className="tab-container">
-          <h2>Savings / Investments</h2>
-          <div className="label-wrapper">
-            <label>401k / IRA</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>College Savings</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Investments</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Emergency Fund</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Other</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-        </div>
-        <div className="tab-container">
-          <h2>Miscellaneous Expenses</h2>
-          <div className="label-wrapper">
-            <label>Pet</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Pet Insurance</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Hobbies / Sports</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Entertainment</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Travel</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-          <div className="label-wrapper">
-            <label>Other</label>
-            <div className="input-container">
-              <div className="label-helper">$</div>
-              <input type="text" defaultValue={0} onChange={(e) => { setIncome(e.target.value)}}/>
-            </div>
-          </div>
-        </div>
+      </div>
+      <div className="buttons-container">
+        <button onClick={() => { addFields() }}>Add Fields</button>
+        <button id="calculate" onClick={() => { handleValues() }}>Calculate</button>
       </div>
     </StyledForm>
   )
@@ -371,6 +118,16 @@ border-radius: 8px;
       color: rgb(231, 230, 230);
       margin-left: 10px;
       width: 50%;
+      height: 100%;
+      input{
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 20px;
+        color: rgb(231, 230, 230);
+        width: 100%;
+        height: 100%;
+      }
     }
     .input-container {
       display: flex;
@@ -383,98 +140,56 @@ border-radius: 8px;
       &:hover {
         border: 1px solid #bbbbbb;
       }
-    }
-    .label-helper {
-      font-size: 16px;
-      color: #dbdbdb;
-      &:first-child {
-        margin-left: 6px;
-      }
-    }
-
-    input {
-      border: none;
-      background: none;
-      outline: none;
-      margin: 10px 6px;
-      font-size: 20px;
-      width: 75%;
-      color: rgb(231, 230, 230);
-    }
-    .percent {
-      width: 40px;
-      text-align: right;
-      margin: 10px 4px;
-    }
-    select {
-      border: none;
-      font-size: 18px;
-      width: 100%;
-      margin: 10px;
-      background: none;
-      color: white;
-      option {
-        color: #000000;
-        margin-left: 10px;
+      .label-helper {
         font-size: 16px;
+        color: #dbdbdb;
+        &:first-child {
+          margin-left: 6px;
+        }
+      }
+      input {
+        border: none;
         background: none;
+        outline: none;
+        margin: 10px 6px;
+        font-size: 20px;
+        width: 75%;
+        color: rgb(231, 230, 230);
       }
     }
   }
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-      font-size: 20px;
-      margin: 20px auto;
-      width: 80%;
-      @media (max-width: 660px){
-        width: 95%;
-      }
-      input {
-        margin-right: 10px;
-      }
-      p {
+  .buttons-container {
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 660px){
+      width: 95%;
+    }
+    button {
+      border: none;
+      width: 40%;
+      height: 40px;
+      border-radius: 6px;
+      font-size: 18px;
+      letter-spacing: .5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        background-color: #4CAF50;
         color: white;
-        font-size: 16px;
-      }
-      .tooltip {
-        margin-left: 10px;
-        display: flex;
-        text-align: center;
-        position: relative;
-        h2 {
-          font-size: 24px;
-          font-weight: 700;
-          background: #bbbbbb;
-          padding: 1px 2px;
-          border-radius: 50%;
-          height: 30px;
-          width: 30px;
-          cursor: pointer;
-        }
-      }
-      .tooltip:hover {
-        color: #000000;
-      }
-      .tooltip:hover h2 {
-        color: #000000;
-        background: rgb(156, 156, 156);
-      }
-      .tooltip:hover p {
-        display: block;
-      }
-      .tooltip p {
-        display: none;
-        position: absolute;
-        width: 400px;
-        background: #bbbbbb;
-        border: 1px solid black;
-        left: 40px;
-        border-radius: 8px;
-        color: black;
       }
     }
-    .additions-container {
-
+    #calculate {
+      background: black;
+      color: white;
+      &:hover {
+        background-color: #4CAF50;
+        color: white;
+      }
     }
+  }
 `;

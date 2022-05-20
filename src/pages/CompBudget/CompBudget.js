@@ -1,28 +1,17 @@
 import { useState } from 'react';
 
 // components
-import { Form } from './components/Form.js';
+
 
 // css
 import styled from 'styled-components';
 import * as pallette from '../../styled/ThemeVariables.js';
-import { Totals } from './components/Totals.js';
 
-export const Budget = () => {
-
-  const [ total, setTotal ] = useState(0);
+export const CompBudget = () => {
 
   return (
     <StyledBudget>
-      <h1>Simple Budget</h1>
-      <div className="calc-wrapper">
-        <Form
-          setTotal={setTotal}
-        />
-        <Totals
-          total={total}
-        />
-      </div>
+      
     </StyledBudget>
   )
 }
